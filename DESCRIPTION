@@ -1,0 +1,8 @@
+Package: ncaat
+Type: Package
+Title: Historical NCAA Tournament game data
+Version: 0.1.0
+Author: Andrew Weatherman
+Description: Includes a data set of every NCAA Tournament game in the expansion era, including region, location, round, and seed, and two shape files of game and team locations.
+Depends: 
+    R (>= 2.10)
