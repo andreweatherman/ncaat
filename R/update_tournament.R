@@ -24,7 +24,7 @@ update_tournament <- function(min_date, max_date){
                                            subset(select=-c(1))
                                          return(update_df)})
   update_df <- update_df %>% dplyr::filter(dplyr::between(date, as.Date(min_date), as.Date(max_date)))
-  update_df <- dplyr::left_join(update_df, (utils::read.csv(curl::curl('https://raw.githubusercontent.com/andreweatherman/ncaat/main/school_town.csv')) %>% dplyr::select(team, team_town)), by='team')
-  update_df <- dplyr::left_join(update_df, (utils::read.csv(curl::curl('https://raw.githubusercontent.com/andreweatherman/ncaat/main/school_town.csv')) %>% dplyr::select(opp, opp_town)), by='opp')
+  update_df <- dplyr::left_join(update_df, (utils::read.csv(curl::curl('https://raw.githubusercontent.com/andreweatherman/ncaat/main/merge_data/school_town.csv')) %>% dplyr::select(team, team_town)), by='team')
+  update_df <- dplyr::left_join(update_df, (utils::read.csv(curl::curl('https://raw.githubusercontent.com/andreweatherman/ncaat/main/merge_data/school_town.csv')) %>% dplyr::select(opp, opp_town)), by='opp')
   tournament <- rbind(update_df, (ncaat::tournament %>% select(-c(1)))) %>% dplyr::distinct() %>% dplyr::arrange(desc(date)) %>% dplyr::mutate(game_id=dplyr::row_number(), game_id=rev(game_id), .before=year)
   return(tournament)})}
