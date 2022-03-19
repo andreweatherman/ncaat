@@ -7,7 +7,7 @@ Update tournament data
 Update loaded tournament data frame by date range
 }
 \usage{
-update_tournament(x)
+update_tournament(min_date, max_date)
 }
 \arguments{
   \item{min_date}{Tail of date range in year/month/date format (e.g. '2022-03-16')}
