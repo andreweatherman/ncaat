@@ -13,9 +13,6 @@ update_tournament(min_date, max_date)
   \item{min_date}{Tail of date range in year/month/date format (e.g. '2022-03-16')}
   \item{max_date}{Head of date range in year/month/date format (e.g. '2022-03-18')}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 See \code{\link{tournament}} for expanded variables list
 }
